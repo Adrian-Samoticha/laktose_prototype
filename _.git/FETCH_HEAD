@@ -1,0 +1,5 @@
+2679c10741318cd40a0d1fa149cc3d37fa0d40b1		branch 'main' of https://github.com/Desdaemon/flutter_rust_bridge_template
+440817e6291212049344cbc07192139660447d29	not-for-merge	branch 'flutter3.0' of https://github.com/Desdaemon/flutter_rust_bridge_template
+31a02127ef891118a25bc9edf273b16b3a20fff3	not-for-merge	branch 'macos-static' of https://github.com/Desdaemon/flutter_rust_bridge_template
+9f8c537f96bfc73d198e4606de796067b983ce7f	not-for-merge	branch 'plugin' of https://github.com/Desdaemon/flutter_rust_bridge_template
+38c7d7e78050e11a03b5088e00ac1cd889291f26	not-for-merge	branch 'wasm_bindgen' of https://github.com/Desdaemon/flutter_rust_bridge_template

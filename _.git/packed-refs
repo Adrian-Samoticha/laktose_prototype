@@ -1,0 +1,7 @@
+# pack-refs with: peeled fully-peeled sorted 
+440817e6291212049344cbc07192139660447d29 refs/remotes/origin/flutter3.0
+31a02127ef891118a25bc9edf273b16b3a20fff3 refs/remotes/origin/macos-static
+2679c10741318cd40a0d1fa149cc3d37fa0d40b1 refs/remotes/origin/main
+9f8c537f96bfc73d198e4606de796067b983ce7f refs/remotes/origin/plugin
+38c7d7e78050e11a03b5088e00ac1cd889291f26 refs/remotes/origin/wasm_bindgen
+57e061574fe71d0f4455c18aee4156a466d06c08 refs/tags/flutter_pre3.0
