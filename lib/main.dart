@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
@@ -189,6 +190,9 @@ class _GraphPainter extends CustomPainter {
     required this.globalOffset,
   });
 
+  static const scale = 32.0;
+  static const zScale = 0.02;
+
   @override
   void paint(Canvas canvas, Size size) {
     if (nodeList.length != positions.length) {
@@ -197,10 +201,17 @@ class _GraphPainter extends CustomPainter {
       return;
     }
 
-    const scale = 32.0;
-    const zScale = 0.02;
+    paintEdges(canvas);
+    paintNodes(canvas);
+  }
 
-    // paint edges
+  @override
+  bool shouldRepaint(_GraphPainter oldDelegate) {
+    return nodeList.length != oldDelegate.nodeList.length ||
+        globalOffset != oldDelegate.globalOffset;
+  }
+
+  void paintEdges(Canvas canvas) {
     for (var edge in edgeList) {
       final fromPosition = positions[edge.fromIndex];
       final toPosition = positions[edge.toIndex];
@@ -232,8 +243,9 @@ class _GraphPainter extends CustomPainter {
         );
       }
     }
+  }
 
-    // paint nodes
+  void paintNodes(Canvas canvas) {
     for (var i = 0; i < nodeList.length; i += 1) {
       final node = nodeList[i];
       final position = positions[i];
@@ -247,7 +259,9 @@ class _GraphPainter extends CustomPainter {
         ..maskFilter =
             MaskFilter.blur(BlurStyle.normal, position.z.abs() * 0.05);
 
-      canvas.drawCircle(offset, (position.z + 20.0) * 0.2 + 2.0, paint);
+      final x = position.z * 0.1;
+      final nodeSize = 3.0 * x / (1 - exp(-x)) + 2.0;
+      canvas.drawCircle(offset, nodeSize, paint);
 
       final span = TextSpan(
         text: node.split('/').last,
@@ -268,11 +282,5 @@ class _GraphPainter extends CustomPainter {
         offset + Offset(tp.width * -0.5, 4.0),
       );
     }
-  }
-
-  @override
-  bool shouldRepaint(_GraphPainter oldDelegate) {
-    return nodeList.length != oldDelegate.nodeList.length ||
-        globalOffset != oldDelegate.globalOffset;
   }
 }
