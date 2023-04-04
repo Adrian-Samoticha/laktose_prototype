@@ -491,6 +491,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_STYLE = "non-global";
 				SWIFT_OBJC_BRIDGING_HEADER = Runner/bridge_generated.h;
 				SWIFT_VERSION = 5.0;
 			};
@@ -618,6 +619,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_STYLE = "non-global";
 				SWIFT_OBJC_BRIDGING_HEADER = Runner/bridge_generated.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -639,6 +641,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_STYLE = "non-global";
 				SWIFT_OBJC_BRIDGING_HEADER = Runner/bridge_generated.h;
 				SWIFT_VERSION = 5.0;
 			};
