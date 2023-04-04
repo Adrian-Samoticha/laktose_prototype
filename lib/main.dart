@@ -212,7 +212,7 @@ class _GraphPainter extends CustomPainter {
           (Offset(toPosition.x, toPosition.y) * scale + globalOffset) *
               (1.0 + toPosition.z * zScale);
 
-      const steps = 16;
+      const steps = 8;
       for (int i = 0; i < steps; i += 1) {
         final fromSegmentPosition = i.remap(0, steps, 0.0, 1.0);
         final toSegmentPosition = (i + 1).remap(0, steps, 0.0, 1.0);
