@@ -32,6 +32,13 @@ pub struct RustEdge {
     pub to_index: u32,
 }
 
+/// Represents a 3D position with `x`, `y`, and `z` coordinates.
+///
+/// # Fields
+///
+/// * `x` - The x-coordinate of the position
+/// * `y` - The y-coordinate of the position
+/// * `z` - The z-coordinate of the position
 #[derive(Clone)]
 pub struct Position {
     pub x: f32,
